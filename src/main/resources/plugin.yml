@@ -1,0 +1,9 @@
+name: fairEnchants
+version: '${version}'
+main: xyz.mobmaker.fairenchants.FairEnchants
+api-version: '1.17'
+
+commands:
+  extract:
+    description: Extracts the listed enchant into a book in exchange for experience.
+    usage: /extract <enchantment name>
