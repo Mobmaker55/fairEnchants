@@ -34,10 +34,13 @@ public class GrindstoneListener implements Listener {
         Map<Enchantment, Integer> enchantments = disenchant.getEnchantments();
         HumanEntity player = e.getWhoClicked();
         for (Enchantment ench : enchantments.keySet()) {
+            if (ench.getKey().getKey().toLowerCase().contains("curse")) {
+                continue;
+            }
             int experience = Utils.experienceCalculator(ench, enchantments.get(ench));
             World world = player.getWorld();
             ExperienceOrb orb = world.spawn(player.getLocation(), ExperienceOrb.class);
-            orb.setExperience(experience * 30);
+            orb.setExperience(experience * 15);
 
 
         }

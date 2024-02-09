@@ -40,6 +40,12 @@ public class ExtractCommand implements CommandExecutor, TabCompleter {
             sender.sendMessage("You need to specify a valid enchant. (use the tab-complete!)");
             return true;
         }
+
+        if (toExtract.getKey().getKey().toLowerCase().contains("curse")) {
+            sender.sendMessage("You can't extract curses.");
+            return true;
+        }
+
         if (!heldItem.containsEnchantment(toExtract)) {
             sender.sendMessage("The item in your main hand does not have the enchant you specified.");
             sender.sendMessage("No action has been taken.");
